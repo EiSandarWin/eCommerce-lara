@@ -1,6 +1,9 @@
-<div class="card text-center">
+<div style="clear:both" class="card text-center">
 
-    <div class="card-footer text-muted">
-        2 days ago
+    <div class="panel panel-default">
+        <div class="panel-body">
+            Panel content
+        </div>
+        <div class="panel-footer"></div>
     </div>
 </div>

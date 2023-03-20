@@ -21,11 +21,32 @@
     {{View::make('footer')}}
 </body>
 <style>
-    .custom-login{
+    custom-login{
         height: 500px;
         padding-top: 100px;
     }
-
+    img.slider-img{
+        height: 400px !important;
+    }
+    .custom-product{
+        height: 600px;
+    }
+    .slider-text{
+        background-color: #0b683d !important;
+    }
+    .trending-img{
+        height: 100px;
+    }
+    .trending-item{
+        float: left;
+        width: 20%;
+    }
+    .trending-wrapper{
+        margin: 30px;
+    }
+    .detail-img{
+       height: 200px;
+     }
 
 </style>
 {{--<script>--}}

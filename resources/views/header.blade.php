@@ -1,6 +1,14 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<?php
+use App\Http\Controllers\ProductController;
+$total=0;
+if(Session::has('user'))
+    {
+    $total =ProductController::cartItem();
+    }
+?>
+<nav class="navbar navbar-expand-lg bg-body-tertiary ">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="\">E-Com</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,8 +27,19 @@
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Cart(0)</a> </li>
-
+                <li><a href="#">Cart({{$total}})</a> </li>&nbsp;
+                @if(Session::has('user'))
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" data-toogle="dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{Session::get('user')['name']}}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    </ul>
+                </li>
+                @else
+                    <li><a href="/login">Login</a> </li>&nbsp;
+                @endif
             </ul>
 
 
